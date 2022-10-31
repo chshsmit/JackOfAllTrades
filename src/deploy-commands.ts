@@ -1,8 +1,7 @@
 import { REST, Routes } from "discord.js";
 import { COMMANDS } from "./slashCommands";
 
-const token =
-  "MTAzNTYzMTE1ODQzNzg4ODExMA.Gob6qP.siJx0KKfOpequrPoMuriisJjJamCWGYX0smNuU";
+const token = "";
 const guildId = "811428416380469249";
 const applicationId = "1035631158437888110";
 
