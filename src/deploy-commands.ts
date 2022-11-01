@@ -1,15 +1,12 @@
 import { REST, Routes } from "discord.js";
 import { COMMANDS } from "./slashCommands";
-
-const token = "";
-const guildId = "811428416380469249";
-const applicationId = "1035631158437888110";
+import { discordToken, guild, application } from "./config";
 
 const commands = COMMANDS.map((command) => {
   return command.data.toJSON();
 });
 
-const rest = new REST({ version: "10" }).setToken(token);
+const rest = new REST({ version: "10" }).setToken(discordToken);
 
 // deploy commands
 (async () => {
@@ -19,7 +16,7 @@ const rest = new REST({ version: "10" }).setToken(token);
     );
 
     const data: any = await rest.put(
-      Routes.applicationGuildCommands(applicationId, guildId),
+      Routes.applicationGuildCommands(application, guild),
       { body: commands }
     );
 
