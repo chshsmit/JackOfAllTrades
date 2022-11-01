@@ -1,17 +1,6 @@
 import { Client, Collection, Events, GatewayIntentBits } from "discord.js";
 import { COMMANDS } from "./slashCommands";
-
-// declare module "discord.js" {
-//   export interface Client {
-//     commands: Collection<unknown, any>;
-//   }
-// }
-
-console.log("ARE WE HERE");
-const token =
-  "MTAzNTYzMTE1ODQzNzg4ODExMA.Gob6qP.siJx0KKfOpequrPoMuriisJjJamCWGYX0smNuU";
-// const guild_id = "811428416380469249";
-// const application_id = "1035631158437888110";
+import { discordToken } from "./config";
 
 console.log("Bot is starting");
 
@@ -49,4 +38,4 @@ client.on(Events.InteractionCreate, async (interaction) => {
   }
 });
 
-client.login(token);
+client.login(discordToken);
