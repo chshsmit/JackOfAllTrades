@@ -4,7 +4,6 @@ import { discordToken } from "./config";
 
 console.log("Bot is starting");
 
-
 const client = new Client({
   intents: [GatewayIntentBits.Guilds],
 });
@@ -16,6 +15,7 @@ COMMANDS.forEach((command) => {
 });
 
 client.once(Events.ClientReady, (c) => {
+  client.user?.setActivity("Being a baddy");
   console.log(`Ready! Logged in as ${c.user.tag}`);
 });
 
@@ -25,6 +25,7 @@ client.on(Events.InteractionCreate, async (interaction) => {
   const command = interaction.client.commands.get(interaction.commandName);
   if (!command) {
     console.error(`No command matching ${interaction.commandName}`);
+    await interaction.reply({ content: "That command does not exist" });
     return;
   }
 
