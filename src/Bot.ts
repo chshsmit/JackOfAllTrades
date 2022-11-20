@@ -4,6 +4,7 @@ import { discordToken } from "./config";
 
 console.log("Bot is starting");
 
+
 const client = new Client({
   intents: [GatewayIntentBits.Guilds],
 });
