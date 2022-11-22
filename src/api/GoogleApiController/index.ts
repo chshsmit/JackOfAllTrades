@@ -1,13 +1,11 @@
 import { google } from "googleapis";
 
 export default class GoogleApiController {
-  googleApiKey: string;
   scopes: string[];
   baseYoutubeUrl: string;
   creds: string;
 
   constructor() {
-    this.googleApiKey = "AIzaSyB6BxbUHbHr66SWJ_EDy69GL-9EoZq6sX8";
     this.baseYoutubeUrl =
       "https://www.googleapis.com/youtube/v3/videos?id={video_id}&key={key}&part=snippet";
 
