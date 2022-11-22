@@ -1,6 +1,6 @@
 import { Client, Collection, Events, GatewayIntentBits } from "discord.js";
 import { COMMANDS } from "./slashCommands";
-import { discordToken } from "./config";
+import { getConfiguration } from "./util/util";
 
 console.log("Bot is starting");
 
@@ -40,4 +40,5 @@ client.on(Events.InteractionCreate, async (interaction) => {
   }
 });
 
-client.login(discordToken);
+const config = getConfiguration();
+client.login(config.discordToken);
