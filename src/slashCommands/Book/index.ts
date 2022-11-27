@@ -5,6 +5,7 @@ import {
   SlashCommandBuilder,
 } from "discord.js";
 import GoodReads from "../../api/GoodReads";
+import GoogleApiController from "../../api/GoogleApiController";
 import Command from "../../interfaces/Command";
 
 export default class Book implements Command {
@@ -34,6 +35,12 @@ export default class Book implements Command {
       );
       return;
     }
+
+    const api = new GoogleApiController();
+    const sheetResponse = await api.addBookToSheet(bookInformation);
+
+    if (sheetResponse !== 1)
+      await interaction.reply("Sorry something went wrong, please try again");
 
     const response = new EmbedBuilder()
       .setTitle(bookInformation.bookTitle)

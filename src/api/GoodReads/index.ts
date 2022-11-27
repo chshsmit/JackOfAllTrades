@@ -1,14 +1,6 @@
 import { getPageHtmlData, cleanString } from "../../util/util";
 import { JSDOM } from "jsdom";
-
-interface BookDataResponse {
-  bookTitle: string;
-  bookDescription: string;
-  rating: string;
-  genres: Array<string>;
-  author: string;
-  bookCover: string | null;
-}
+import BookDataResponse from "../../interfaces/BookDataResponse";
 
 export default class GoodReads {
   static async fetchBookData(
@@ -35,6 +27,7 @@ export default class GoodReads {
       genres,
       author: cleanString(author),
       bookCover: bookCover ? cleanString(bookCover) : null,
+      url: bookUrl,
     };
   }
 
