@@ -4,3 +4,4 @@ creds.json
 test.html
 config.ts
 .vscode
+.build
