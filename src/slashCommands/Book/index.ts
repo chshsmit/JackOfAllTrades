@@ -26,6 +26,7 @@ export default class Book implements Command {
   async execute(
     interaction: ChatInputCommandInteraction<CacheType>
   ): Promise<void> {
+    await interaction.reply("Working on it...");
     const bookUrl = interaction.options.getString("url")!;
     const bookInformation = await GoodReads.fetchBookData(bookUrl);
 
@@ -60,6 +61,6 @@ export default class Book implements Command {
       )
       .setImage(bookInformation.bookCover);
 
-    await interaction.reply({ embeds: [response] });
+    await interaction.followUp({ embeds: [response] });
   }
 }
