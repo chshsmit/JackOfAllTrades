@@ -32,7 +32,7 @@ export default class RandomName implements Command {
     } else {
       await (interaction.member as any).setNickname(name);
       await interaction.reply({
-        content: `I changed your nickname to: ${name}`,
+        content: `I changed your nickname`,
         ephemeral: true,
       });
     }
