@@ -22,3 +22,11 @@ export function cleanString(str: string): string {
   const lineBreaksRemoved = str.replace(/[\r\n]/gm, "");
   return lineBreaksRemoved.trim();
 }
+
+export function capitalizeFirst(str: string): string {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
+export function chooseRandom<T>(arr: Array<T>): T {
+  return arr[Math.floor(Math.random() * arr.length)];
+}
