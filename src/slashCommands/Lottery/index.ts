@@ -51,7 +51,7 @@ export default class Lottery implements Command {
     minNumber = minNumber === null ? 1 : minNumber;
 
     let maxNumber = interaction.options.getNumber("max");
-    maxNumber = maxNumber === null ? 1 : maxNumber;
+    maxNumber = maxNumber === null ? 100 : maxNumber;
 
     if (minNumber > maxNumber) {
       await interaction.reply({
