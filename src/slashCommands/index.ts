@@ -3,6 +3,7 @@ import Bangerz from "./Bangerz";
 import Book from "./Book";
 import EightBall from "./EightBall";
 import Help from "./Help";
+import Lottery from "./Lottery";
 import RandomName from "./RandomName";
 import RollDice from "./RollDice";
 
@@ -12,5 +13,6 @@ export const COMMANDS: Command[] = [
   new Book(),
   new RandomName(),
   new EightBall(),
+  new Lottery(),
   new Help(),
 ];

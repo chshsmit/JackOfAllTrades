@@ -30,3 +30,7 @@ export function capitalizeFirst(str: string): string {
 export function chooseRandom<T>(arr: Array<T>): T {
   return arr[Math.floor(Math.random() * arr.length)];
 }
+
+export function randomNumber(min: number, max: number): number {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
